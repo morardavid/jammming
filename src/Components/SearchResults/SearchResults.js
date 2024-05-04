@@ -1,12 +1,12 @@
 import React from "react";
-import Track from "../Track/Track";
+import TrackList from "../TrackList/TrackList";
 
-const SearchResults = () => {
+const SearchResults = ({tracks, onAddToPlaylist}) => {
     return (
         <>
         <div className="SearchResult">
             <h2 className="Results">Results</h2>
-            <Track/>
+            <TrackList tracks={tracks} onAddToPlaylist={onAddToPlaylist}/>
         </div>
         </>
     );

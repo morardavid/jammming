@@ -1,0 +1,14 @@
+
+.AddToPlaylistButton {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .AddToPlaylistButton:hover {
+    background-color: #1ed760;
+  }
+  

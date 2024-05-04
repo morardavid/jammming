@@ -16,8 +16,10 @@ const SearchBar = () => {
         <>
             <div className="SearchBar">
              <input 
+                type="Text"
                 value={searchText}
                 onChange={handleChange}
+                placeholder="Your research starts here"
              />
                 <Button className="Search" onClick={handleSearch}>
                     Search
