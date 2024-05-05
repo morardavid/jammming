@@ -1,22 +1,17 @@
-import React from "react";
+import React,{} from "react";
 import "../Track/Track.css";
 
-const Track = ({track, isRemovable, onTogglePlaylist}) => {
-    const handleTogglePlaylist = () =>{
-        if(isRemovable){
-            onTogglePlaylist(track,'remove')
-        } else{
-            onTogglePlaylist(track,'add')
-        }
-    };
+const Track = ({track}) => {
+    
+
     return(
-    <>
-         <div className="Track">
-            <h3>{track.name}</h3>
-            <p>{track.artist} · {track.album}</p>
-            <button className="togglePlaylsit" onClick={handleTogglePlaylist}>
-                {isRemovable ? '-' : '+'}
-            </button>
+    <>  
+        <div className="Track">
+            <div className="Track-Info">
+                <h3>{track.name}</h3>
+                <p>{track.artist} · {track.album}</p>
+            </div>
+            
         </div>
     </>
     );

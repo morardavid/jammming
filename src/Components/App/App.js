@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
+import '../App/App.css'
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
+
 
 const App = () => {
   const trackSample = [
@@ -9,10 +11,6 @@ const App = () => {
       {id:2, name:'song 2', artist:'artist 2', album:'album 2'},
   ];
 
-  const [playlistTracks, setPlaylistTracks] = useState([]);
-  const addToPlaylist = track => {
-    setPlaylistTracks(prevTracks => [...prevTracks, track]);
-  };
   return (
     <>
     <div className="App">
@@ -20,9 +18,8 @@ const App = () => {
         <h1>Jammming</h1>
       </header>
       <SearchBar/>
-      <SearchResults tracks={trackSample} onAddToPlaylist={addToPlaylist} />
-      <Playlist
-      tracks={playlistTracks} />
+      <SearchResults tracks={trackSample}/>
+      <Playlist/>
     </div>
     </>
   );

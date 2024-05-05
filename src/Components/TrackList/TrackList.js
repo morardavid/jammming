@@ -6,7 +6,10 @@ const TrackList = ({tracks}) => {
         <>
         <div className="TrackList">
             {tracks.map (track =>(
-                <Track key={track.id} track ={track}/>
+                <Track 
+                key={track.id} 
+                track ={track}
+                />
             ))};
         </div>
         </>

@@ -1,33 +1,27 @@
-import React, { useState } from "react";
-import TrackList from "../TrackList/TrackList";
+import React, { useState, useCallback } from "react";
 import Button from "../Button/Button";
 
-const Playlist = ({ searchResults, playlistTracks, onAddToPlaylist }) => {
-    const [playlistName, setPlaylistName] = useState("Name it or you lose it");
+const Playlist = () => {
+    const [playlistName, setPlaylistName] = useState('');
 
-    const handleChangeName = (event) => {
-        setPlaylistName(event.target.value);
-    };
-
-    const handleSaveToSpotify = () => {
+    const handleSave = () => {
         console.log('Save To Spotify');
     };
-
-    const filteredSearchResults = searchResults && searchResults.filter(track => 
-        !playlistTracks.some(playlistTrack => playlistTrack.id === track.id));
+    const handleChangeName = useCallback((event) => {
+        setPlaylistName(event.target.value);
+    }, []);
 
     return (
         <div className="Playlist">
             <input 
                 type="text"
-                onChange={handleChangeName} 
-                defaultValue="Name it or you lose it" 
                 value={playlistName}
+                onChange={handleChangeName} 
+                placeholder="Name it or loose it" 
             />
-            <TrackList tracks={filteredSearchResults} onAddToPlaylist={onAddToPlaylist} />
-            <Button className="SaveToSpotify" onClick={handleSaveToSpotify}>Save To Spotify</Button>
+            <Button className="SaveToSpotify" onClick={handleSave}>Save To Spotify</Button>
         </div>
     );
 };
 
-export default Playlist;
+export default Playlist

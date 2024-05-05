@@ -6,7 +6,7 @@ const SearchBar = () => {
 
     const handleSearch = () => {
         console.log('Search in Spotify')
-      }
+      };
 
     const handleChange = useCallback((event) => {
         setSearchText(event.target.value);
